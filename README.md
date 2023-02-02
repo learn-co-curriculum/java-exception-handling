@@ -76,11 +76,33 @@ exceptions that are thrown by any code inside the `try` block will:
   code could possibly throw an `InputMismatchException`, like the code above,
   then we will pass that exception to the `catch` block.
 
+Let's actually look at this flow of control by using the debugger! We'll set a
+breakpoint on the line
+`int userNumber = inputScanner.nextInt();`
+
+![hit-breakpoint](https://curriculum-content.s3.amazonaws.com/java-mod-1/exception-handling/intellij-exception-handling-hit-breakpoint.PNG)
+
+If we navigate over to the console and enter the word "Hello" instead of a
+number and then choose the step-over action, we'll see that the execution jumps
+into the `catch` block.
+
+![catch-block](https://curriculum-content.s3.amazonaws.com/java-mod-1/exception-handling/intellij-catch-block.PNG)
+
 Note that in the example above, the program will not execute the line
 `System.out.println("The user entered " + userNumber);` if the user enters an
-invalid number since the exception will be thrown on the previous line. It
-will, instead, interrupt the execution of the `try` block and jump to the
-beginning of the `catch` block.
+invalid input. This is because the exception was thrown on the previous line.
+As we can see by running the program in the debugger, entering an invalid input
+interrupts the execution of the `try` block. The execution will then jump right
+to the `catch` block.
+
+If we resume the program and look in the console, we will see that the output
+is the message printed from the `catch` block:
+
+```text
+Please enter a number:
+Hello
+The input was not a number
+```
 
 The `InputMismatchException` is an "unchecked" exception, which means that the
 code that could potentially cause it to be thrown does not _have_ to catch it.
