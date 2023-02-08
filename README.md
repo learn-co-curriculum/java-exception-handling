@@ -29,7 +29,7 @@ public static void main(String[] args) {
 }
 ```
 
-The `nextInt()` method of the `Scanner` class can throw a
+The `nextInt()` method of the `Scanner` class can throw an
 `InputMismatchException`. It does so when the input entered by the user cannot
 be interpreted as an integer number. When it throws an exception, it creates an
 exception it wants to throw. For example, it might create an
@@ -68,7 +68,7 @@ exceptions that are thrown by any code inside the `try` block will:
 
 - Cause the execution of the statements inside the `try` block to be interrupted
   immediately.
-- Cause the execution to jump straight pass the remaining statements (if any)
+- Cause the execution to jump straight past the remaining statements (if any)
   in the `try` block into the beginning of the `catch` block.
 - The `catch` block takes in something called a parameter. More on parameters
   later when we learn about methods. For now, know that the `catch` block needs
